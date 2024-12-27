@@ -11,7 +11,7 @@ export const talents = [
 	{
 		slug: 'guzi',
 		name: 'Guzi Inojoque',
-		html_name: '<span class="c1">G</span>uzi Inojoque',
+		html_name: '<span class="c1">G</span>uzi Injoque',
 		role: 'Filmmaker',
 		content: 'Holis',
 		src: '/images/guzi.avif',
