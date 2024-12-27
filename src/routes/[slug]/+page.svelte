@@ -9,6 +9,8 @@
 
 	const videoSrc = '/video_pipeline/video.m3u8';
 
+	let { data } = $props();
+
 	let winw = $state();
 	let videoElement = $state();
 	let play = $state(false);
@@ -40,22 +42,22 @@
 		ended = true
 	}
 
-	onMount(() => {
-		if (Hls.isSupported()) {
-			// Si el navegador soporta HLS.js
-			const hls = new Hls();
-			hls.loadSource(videoSrc);
-			hls.attachMedia(videoElement);
-			hls.on(Hls.Events.MANIFEST_PARSED, function () {
-				// videoElement.play();
-			});
-		} else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
-			// Para navegadores como Safari que soportan HLS de forma nativa
-			videoElement.src = videoSrc;
-			videoElement.addEventListener('loadedmetadata', function () {
-			});
-		}
-	})
+	// onMount(() => {
+	// 	if (Hls.isSupported()) {
+	// 		// Si el navegador soporta HLS.js
+	// 		const hls = new Hls();
+	// 		hls.loadSource(videoSrc);
+	// 		hls.attachMedia(videoElement);
+	// 		hls.on(Hls.Events.MANIFEST_PARSED, function () {
+	// 			// videoElement.play();
+	// 		});
+	// 	} else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
+	// 		// Para navegadores como Safari que soportan HLS de forma nativa
+	// 		videoElement.src = videoSrc;
+	// 		videoElement.addEventListener('loadedmetadata', function () {
+	// 		});
+	// 	}
+	// })
 </script>
 
 <svelte:head>
@@ -71,11 +73,12 @@
 		<rect x="495" y="146" width="475" height="126" rx="63" transform="rotate(-180 495 146)" stroke="var(--deco)" stroke-width="40"/>
 	</svg>
 	<section class="image rel">
-		<video id="video" playsinline bind:this={videoElement} onended={showReplay} poster={kombucha}>
+		<!-- <video id="video" playsinline bind:this={videoElement} onended={showReplay} poster={kombucha}>
 			<track kind="captions">
-		</video>
+		</video> -->
+		<img id="video" src={data.talent.src} alt={data.talent.name}>
 		<div class="imgd abs fcol p32 g32">
-			<div class="btns fcc g32">
+			<!-- <div class="btns fcc g32">
 				{#if ended}
 					<button class="fcc" type="button" title="Replay" aria-label="Replay" onclick={replayVideo}>
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1D20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-repeat"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
@@ -96,9 +99,9 @@
 						{/if}
 					</button>
 				{/if}
-			</div>
-			<h1 class="mo">{$page.params.slug}</h1>
-			<p class="desc mo">Arquitecto Digital</p>
+			</div> -->
+			<h1 class="mo">{@html data.talent.html_name}</h1>
+			<p class="desc mo">{data.talent.role}</p>
 			<a class="mo" href="#text">ver +</a>
 		</div>
 	</section>
@@ -111,13 +114,10 @@
 		</svg>
 		<article id="text" class="text grow fcol g32">
 			<div class="fcol">
-				<h1>{$page.params.slug}</h1>
-				<p class="desc">Arquitecto Digital</p>
+				<h1>{@html data.talent.html_name}</h1>
+				<p class="desc">{data.talent.role}</p>
 			</div>
-			<p class="content">
-				Hey! me encargo de <Rainbow text="diseñar"/> y <strong>desarrollar</strong> soluciones basadas en <em>tecnología</em>
-				para su empresa. Web, IA, seguridad, creación de sistemas, todo eso y más...
-			</p>
+			<p class="content">{@html data.talent.content}</p>
 			<a href="/#circle" class="link">Regresar a talentos</a>
 		</article>
 	</section>
@@ -141,11 +141,10 @@
 		overflow-x: hidden;
 	}
 	section {
-		/* scroll-snap-align: center; */
 		height: 100dvh;
 		justify-content: center;
 	}
-	video {
+	img {
 		height: calc(100% - 110px);
 		aspect-ratio: 9 / 16;
 		object-fit: cover;
@@ -241,7 +240,7 @@
 		article .fcol {
 			gap: 8px;
 		}
-		video {
+		img {
 			height: 100%;
 			aspect-ratio: unset;
 			width: 100%;
