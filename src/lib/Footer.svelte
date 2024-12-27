@@ -59,7 +59,6 @@
 			</address>
 			<div class="navs fc">
 				<nav class="fcol">
-					<a href="https://www.instagram.com/joinstudio.tv/" target="_blank">TikTok</a>
 					<a href="https://www.instagram.com/joinstudio.tv/" target="_blank">Facebook</a>
 					<a href="https://www.instagram.com/joinstudio.tv/" target="_blank">Instagram</a>
 				</nav>

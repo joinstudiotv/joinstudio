@@ -107,8 +107,7 @@
 		position: relative;
 		min-height: 100vh;
 	}
-
-
+	
 	.hero mark {
 		will-change: background-position;
 		background: linear-gradient(90deg, var(--highlight) 50%, transparent 50%);

@@ -165,6 +165,12 @@
 		max-width: max(50vw, 800px);
 		align-self: flex-end;
 	}
+	:global(.rainbow span) {
+		animation-duration: 2s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		animation-fill-mode: both;
+	}
 	.image {
 		height: 100%;
 		display: flex;
