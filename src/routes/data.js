@@ -14,7 +14,7 @@ export const talents = [
 		html_name: '<span class="c1">G</span>uzi Injoque',
 		role: 'Filmmaker',
 		content: 'Holis',
-		src: '/images/guzi.avif',
+		src: '/images/guz.avif',
 		color: 'var(--ora)'
 	},
 	{
@@ -23,7 +23,7 @@ export const talents = [
 		html_name: 'Javier <span class="c2">V</span>illanueva',
 		role: 'Productor',
 		content: 'Holis',
-		src: '/images/guzi.avif',
+		src: '/images/profe.avif',
 		color: 'var(--yel)'
 	},
 	{
@@ -41,7 +41,7 @@ export const talents = [
 		html_name: 'Alan <span class="c4">M</span>onroy',
 		role: 'Desarrollador Web',
 		content: 'Hey! me encargo de <strong class="rainbow"><span class="c0">d</span><span class="c1">i</span><span class="c2">s</span><span class="c3">e</span><span class="c4">ñ</span><span class="c5">a</span><span class="c0">r</span></strong> y <strong>desarrollar</strong> soluciones basadas en <em>tecnología</em> para su empresa. Web, IA, seguridad, creación de sistemas, todo eso y más...',
-		src: '/images/guzi.avif',
+		src: '/images/alan.avif',
 		color: 'var(--blu)'
 	},
 	{
@@ -50,7 +50,7 @@ export const talents = [
 		html_name: 'All<span class="c5">i</span>son Valdez',
 		role: 'Publicista',
 		content: 'Tu exito es mi meta!',
-		src: '/images/guzi.avif',
+		src: '/images/alli.avif',
 		color: 'var(--vio)'
 	},
 	{
@@ -59,7 +59,7 @@ export const talents = [
 		html_name: '<span class="c2">S</span>antiago Mendoza',
 		role: 'Fotografo',
 		content: 'el mejor momento capturado',
-		src: '/images/guzi.avif',
+		src: '/images/santi.avif',
 		color: 'var(--yel)'
 	}
 	// { color: 'var(--vio)', slug: "/Juan Carlos Llanos", name: 'Juan Carl<span class="c5">o</span>s Llanos', desc: 'Gestión de la reputación' },
