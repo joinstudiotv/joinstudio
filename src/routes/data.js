@@ -67,7 +67,7 @@ export const talents = [
 		slug: 'Zuliet',
 		name: 'Zuliet Seminario',
 		html_name: '<span class="c2">Z</span>uliet Seminario',
-		role: 'BTL',
+		role: 'BTL Manager',
 		content: 'Zuliet es nuestra estratega en marketing experiencial. Conecta marcas y audiencias a través de campañas que generan impacto y fidelidad.',
 		src: '/images/zuliet.avif',
 		color: 'var(--yel)'
