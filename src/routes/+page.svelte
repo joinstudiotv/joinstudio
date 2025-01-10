@@ -23,7 +23,7 @@
 	<title>Join Studio • Agencia Creativa</title>
 </svelte:head>
 
-<!-- {#if myGlobalState.animation || show} -->
+{#if myGlobalState.animation || show}
 <Header/>
 <main>
 	<section class="hero fcol fcc p32 g32 center">
@@ -97,9 +97,9 @@
 	<Circle/>
 </main>
 <Footer/>
-<!-- {:else}
+{:else}
 <Intro on:ready={showPage}/>
-{/if} -->
+{/if}
 
 <style>
 	main {
