@@ -13,8 +13,8 @@
 
 	function showpaths(e) {
 		if (e.animationName === "bigtime") {
-			crearCopiasPath('jo', colores);
-			crearCopiasPath('in', colores, 1);
+			crearCopiasPath('jo', colores, 0, true);
+			crearCopiasPath('in', colores, 1, true);
 		}
 	}
 </script>
@@ -25,7 +25,7 @@
 </div>
 
 <div class="container2 fcc">
-	<svg class="part1" width="500" height="500" viewBox="0 0 485 480" fill="none" xmlns="http://www.w3.org/2000/svg" onanimationend={(e)=>finish(e)}>
+	<svg class="logojoin" width="500" height="500" viewBox="0 0 485 480" fill="none" xmlns="http://www.w3.org/2000/svg" onanimationend={(e)=>finish(e)}>
 		<g id="letras">
 			<path d="M11.732 456.927L17.7129 448.007C23.5463 452.555 29.6078 456.039 35.924 458.436C42.2268 460.829 48.4759 462.041 54.6581 462.041C62.2885 462.041 68.4837 460.411 73.2312 457.169C77.9917 453.913 80.3652 449.744 80.3652 444.643C80.3652 440.594 78.6624 437.257 75.2426 434.632C69.4496 430.19 61.7996 429.882 54.792 429.505C41.2344 428.552 31.9813 426.949 27.0598 424.702C20.2989 421.427 15.3259 415.439 15.3259 407.68C15.3259 401.035 18.2896 395.556 24.2169 391.252C30.1442 386.945 37.8552 384.807 47.3226 384.807C54.202 384.807 60.9876 385.949 67.6926 388.225C74.3979 390.498 80.7675 393.861 86.8021 398.315L80.8214 406.873C75.7389 402.769 70.3881 399.69 64.7825 397.603C59.1773 395.53 53.4108 394.495 47.4702 394.495C41.2344 394.495 36.1117 395.706 32.0618 398.129C28.0254 400.549 26.0004 403.592 26.0004 407.236C26.0004 410.281 27.6125 412.751 29.9564 414.583C33.3492 417.14 40.6712 418.756 51.9358 419.455C63.0375 420.09 75.1983 420.614 83.8653 428.522C88.7466 432.976 91.1874 438.452 91.1874 444.953C91.1874 452.702 87.8349 459.082 81.1296 464.085C74.4247 469.091 65.641 471.595 54.7786 471.595C46.5582 471.595 38.9144 470.397 31.8607 467.987C24.807 465.593 18.0884 461.907 11.7052 456.953L11.732 456.927Z" fill="#1C1D20"/>
 			<path d="M125.37 471.164V394.87H90.6777V385.345H170.455V394.87H135.682V471.164H125.37Z" fill="#1C1D20"/>
@@ -63,11 +63,6 @@
 		align-items: center;
 		justify-content: center;
 	}
-	.part1 {
-		white-space: nowrap;
-		text-align: center;
-		animation: smalltime 1s cubic-bezier(0, 0, 0.2, 1) 2s backwards, bigtime_2 1s cubic-bezier(1, 0, 1, 1) 5s forwards;
-	}
 	.up, .down {
 		font-size: 10vw;
 		line-height: 1;
@@ -81,6 +76,32 @@
 		transform-origin: top;
 		animation: smalltime 1s cubic-bezier(0, 0, 0.2, 1) 0s backwards, bigtime 1s cubic-bezier(1, 0, 1, 1) 1s forwards;
 	}
+	.logojoin {
+		animation: smalltime 1s cubic-bezier(0, 0, 0.2, 1) 2s backwards, bigtime_2 1s cubic-bezier(1, 0, 1, 1) 5s forwards; 
+	}
+	#jo {
+		animation: moveleft 1s 6s forwards;
+	}
+	#in {
+		animation: moveright 1s 6s forwards;
+	}
+	@keyframes moveleft {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-20vw);
+		}
+	}
+	@keyframes moveright {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(20vw);
+		}
+	}
+
 	@media (max-width: 800px) {
 		svg {
 			width: 60vw;

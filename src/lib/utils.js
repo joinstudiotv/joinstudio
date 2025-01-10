@@ -1,6 +1,6 @@
 const delays = [0.0, 0.4, 0.6, 0.8, 1.0, 1.2, 1.6];
 
-export function crearCopiasPath(idPath, colores, delay = 0) {
+export function crearCopiasPath(idPath, colores, delay = 0, erase = false) {
 	const pathOriginal = document.getElementById(idPath);
 
 	if (!pathOriginal) { return }
@@ -17,5 +17,11 @@ export function crearCopiasPath(idPath, colores, delay = 0) {
 		nuevoPath.style.setProperty('--len', `${pathOriginal.getTotalLength()}px`)
 
 		refchild = pathOriginal.parentNode.insertBefore(nuevoPath, refchild.nextSibling);
+
+		if (erase) {
+			setTimeout(() => {
+				nuevoPath.remove()
+			}, 3000)
+		}
 	});
 }

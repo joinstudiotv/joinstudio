@@ -6,6 +6,7 @@
 	import { onMount } from "svelte"
 	import Hls from 'hls.js'
 	import kombucha from '$lib/images/kombucha.avif';
+	import { myGlobalState } from '../state.svelte.js';
 
 	const videoSrc = '/video_pipeline/video.m3u8';
 
@@ -42,6 +43,10 @@
 		ended = true
 	}
 
+	onMount(() => {
+		myGlobalState.animation = true
+	})
+
 	// onMount(() => {
 	// 	if (Hls.isSupported()) {
 	// 		// Si el navegador soporta HLS.js
@@ -61,7 +66,7 @@
 </script>
 
 <svelte:head>
-	<title>{$page.params.slug} • Join Studio</title>
+	<title>{data.talent.name} • Join Studio</title>
 </svelte:head>
 
 <svelte:window bind:innerWidth={winw}/>

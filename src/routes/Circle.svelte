@@ -42,21 +42,21 @@
 
 <section id="circle" class="rel circle" bind:this={circle}>
 	<div class="sticky fcol p32">
-		<div class:inactive={Math.abs(prev_0) > 0.15} class="person abs fc g32" style="--color: red ;transform: translate({double * (Math.cos(prev_0) - 1)}px, {-double*Math.sin(prev_0)}px) rotate({-prev_0}rad);">
+		<div class:inactive={Math.abs(prev_0) > 0.15} class="person abs fc g32" style="--color: var(--red) ;transform: translate({double * (Math.cos(prev_0) - 1)}px, {-double*Math.sin(prev_0)}px) rotate({-prev_0}rad);">
 			<div class="fcol">
 				<h1>Bienvenido a</h1>
 				<p>Join Studio</p>
 			</div>
 		</div>
-		<div class:inactive={Math.abs(prev_1) > 0.15} class="person abs fc g32" style="--color: red ;transform: translate({double * (Math.cos(prev_1) - 1)}px, {-double*Math.sin(prev_1)}px) rotate({-prev_1}rad);">
+		<div class:inactive={Math.abs(prev_1) > 0.15} class="person abs fc g32" style="--color: var(--ora) ;transform: translate({double * (Math.cos(prev_1) - 1)}px, {-double*Math.sin(prev_1)}px) rotate({-prev_1}rad);">
 			<div class="fcol">
-				<h1>Somos un estudio</h1>
+				<h1>Somos un <span class="c1">S</span>tudio</h1>
 				<p>Lleno de talentos</p>
 			</div>
 		</div>
-		<div class:inactive={Math.abs(prev_2) > 0.15} class="person abs fc g32" style="--color: red ;transform: translate({double * (Math.cos(prev_2) - 1)}px, {-double*Math.sin(prev_2)}px) rotate({-prev_2}rad);">
+		<div class:inactive={Math.abs(prev_2) > 0.15} class="person abs fc g32" style="--color: var(--yel) ;transform: translate({double * (Math.cos(prev_2) - 1)}px, {-double*Math.sin(prev_2)}px) rotate({-prev_2}rad);">
 			<div class="fcol">
-				<h1>Haga Click</h1>
+				<h1>Haga <span class="c2">C</span>lick</h1>
 				<p>Para aprender más</p>
 			</div>
 		</div>
@@ -76,7 +76,7 @@
 
 <style>
 	.circle {
-		height: 346lvh;
+		height: 380lvh;
 	}
 	.sticky {
 		height: 100lvh;

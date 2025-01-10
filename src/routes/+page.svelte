@@ -8,6 +8,8 @@
 
 	import talentos from '$lib/images/talentos.avif'
 
+	import { myGlobalState } from './state.svelte.js';
+
 	let show = $state(false);
 
 	function showPage() {
@@ -21,9 +23,7 @@
 	<title>Join Studio • Agencia Creativa</title>
 </svelte:head>
 
-{#if !show}
-<Intro on:ready={showPage}/>
-{:else}
+<!-- {#if myGlobalState.animation || show} -->
 <Header/>
 <main>
 	<section class="hero fcol fcc p32 g32 center">
@@ -97,7 +97,9 @@
 	<Circle/>
 </main>
 <Footer/>
-{/if}
+<!-- {:else}
+<Intro on:ready={showPage}/>
+{/if} -->
 
 <style>
 	main {
